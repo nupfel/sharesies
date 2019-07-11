@@ -149,7 +149,7 @@ sync.runGenerator(function*() {
         .map(order => order['requested_nzd_amount'])
         .reduce((total, amount) => total + parseFloat(amount), 0);
 
-    let investmentBalance = walletBalance + portfolioBalance + purchaseSharesValue;
+    let investmentBalance = portfolioBalance;
     let exploratoryInvestmentBalance = investmentBalance * EXPLORATORY_RATIO;
     let exploratoryInvestmentScore = sortedFundsByBuy.length ? sortedFundsByBuy
         .map(fundInfo => {
